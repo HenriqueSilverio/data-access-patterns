@@ -1,6 +1,6 @@
 # Data Access Patterns
 
-Enterprise "Data Access" patterns with TypeScript examples.
+Enterprise Application Architecture: Data Access Patterns examples.
 
 ## Docker
 
