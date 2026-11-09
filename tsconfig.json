@@ -1,4 +1,14 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
-  "include": ["jest.config.ts", "src/**/*"]
+  "compilerOptions": {
+    "erasableSyntaxOnly": true,
+    "lib": ["es2025", "ESNext.Collection", "ESNext.Temporal"],
+    "module": "nodenext",
+    "noEmit": true,
+    "noUncheckedIndexedAccess": true,
+    "rewriteRelativeImportExtensions": true,
+    "strict": true,
+    "target": "esnext",
+    "types": ["node"],
+    "verbatimModuleSyntax": true
+  }
 }

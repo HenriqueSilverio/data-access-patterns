@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto'
 
-import BookFinder from './BookFinder'
-import BookGateway, { BookGatewayProps } from './BookGateway'
+import BookFinder from './BookFinder.mts'
+import BookGateway, { type BookGatewayProps } from './BookGateway.mts'
 
 const start = () => {
   const finder = new BookFinder()
@@ -10,7 +10,7 @@ const start = () => {
 
   console.log(':: finder.findAll() ::::')
 
-  console.log(library.map((book) => JSON.parse(book.toString()) as BookGatewayProps))
+  console.log(library.map(book => JSON.parse(book.toString()) as BookGatewayProps))
 
   const uuid = randomUUID()
 
@@ -33,7 +33,7 @@ const start = () => {
 
   library = finder.findAll()
 
-  console.log(library.map((book) => JSON.parse(book.toString()) as BookGatewayProps))
+  console.log(library.map(book => JSON.parse(book.toString()) as BookGatewayProps))
 }
 
 start()

@@ -1,4 +1,4 @@
-import BookMapper from './BookMapper'
+import BookMapper from './BookMapper.mts'
 
 const start = () => {
   const mapper = new BookMapper()

@@ -1,6 +1,6 @@
 import Database from 'better-sqlite3'
 
-import Config from './Config'
+import Config from './Config.mts'
 
 const DB = new Database(Config.SQLiteDBPath)
 

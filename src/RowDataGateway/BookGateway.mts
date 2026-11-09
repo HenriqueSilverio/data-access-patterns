@@ -1,12 +1,12 @@
-import DB from '../DB'
+import DB from '../DB.mts'
 
-import IGateway from './IGateway'
+import type IGateway from './IGateway.mts'
 
 export interface BookGatewayProps {
-  id: string,
-  isbn: string,
-  title: string,
-  author: string,
+  id: string
+  isbn: string
+  title: string
+  author: string
 }
 
 export default class BookGateway implements IGateway {
@@ -16,19 +16,19 @@ export default class BookGateway implements IGateway {
     this.props = { ...props }
   }
 
-  public get id() : string {
+  public get id(): string {
     return this.props.id
   }
 
-  public get isbn() : string {
+  public get isbn(): string {
     return this.props.isbn
   }
 
-  public get title() : string {
+  public get title(): string {
     return this.props.title
   }
 
-  public get author() : string {
+  public get author(): string {
     return this.props.author
   }
 

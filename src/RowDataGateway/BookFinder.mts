@@ -1,6 +1,6 @@
-import DB from '../DB'
-import IFinder from './IFinder'
-import BookGateway, { BookGatewayProps } from './BookGateway'
+import DB from '../DB.mts'
+import type IFinder from './IFinder.mts'
+import BookGateway, { type BookGatewayProps } from './BookGateway.mts'
 
 export default class BookFinder implements IFinder {
   private readonly findByIDStatementString = `
@@ -29,12 +29,12 @@ export default class BookFinder implements IFinder {
     })
   }
 
-  public findAll(): Array<BookGateway> {
+  public findAll(): BookGateway[] {
     const statement = DB.prepare(this.findAllStatementString)
 
-    const rows = statement.all() as Array<BookGatewayProps>
+    const rows = statement.all() as BookGatewayProps[]
 
-    const books = rows.map((row) => new BookGateway({
+    const books = rows.map(row => new BookGateway({
       id: row.id,
       isbn: row.isbn,
       title: row.title,

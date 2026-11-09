@@ -1,6 +1,6 @@
-import IGateway from './IGateway'
+import type IGateway from './IGateway.mts'
 
 export default interface IFinder {
   findByID(id: string): IGateway | Promise<IGateway>
-  findAll(): Array<IGateway> | Promise<Array<IGateway>>
+  findAll(): IGateway[] | Promise<IGateway[]>
 }
