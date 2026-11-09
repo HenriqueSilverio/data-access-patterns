@@ -23,23 +23,3 @@ See it running:
 ```bash
 npm run start:data-mapper
 ```
-
-## Docker
-
-### Build
-
-```bash
-docker build -t db-patterns .
-```
-
-### Run
-
-```bash
-docker run --rm -it --name db-patterns db-patterns
-```
-
-### Access
-
-```bash
-docker exec -it db-patterns /bin/sh
-```
