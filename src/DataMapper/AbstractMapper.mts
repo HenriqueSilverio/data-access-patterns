@@ -20,7 +20,7 @@ export default abstract class AbstractMapper<T extends object> {
 
     const preparedStatement = DB.prepare(this.statementFindByID)
 
-    const resultSet = preparedStatement.get(id) as ResultSet
+    const resultSet = preparedStatement.get(id) as ResultSet | undefined
 
     if (!resultSet) {
       return result

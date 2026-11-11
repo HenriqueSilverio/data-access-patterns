@@ -19,7 +19,7 @@ export default class BookFinder implements IFinder {
 
     const row = statement.get({
       bookID: id,
-    }) as BookGateway
+    }) as unknown as BookGateway
 
     return new BookGateway({
       id: row.id,
@@ -32,7 +32,7 @@ export default class BookFinder implements IFinder {
   public findAll(): BookGateway[] {
     const statement = DB.prepare(this.findAllStatementString)
 
-    const rows = statement.all() as BookGatewayProps[]
+    const rows = statement.all() as unknown as BookGatewayProps[]
 
     const books = rows.map(row => new BookGateway({
       id: row.id,

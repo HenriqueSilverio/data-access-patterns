@@ -1,10 +1,10 @@
-import Database from 'better-sqlite3'
+import { Database } from 'node:sqlite'
 
 import Config from './Config.mts'
 
 const DB = new Database(Config.SQLiteDBPath)
 
-const setup = DB.prepare(`
+DB.exec(`
   CREATE TABLE IF NOT EXISTS books (
     id TEXT NOT NULL,
     isbn TEXT NOT NULL,
@@ -13,9 +13,7 @@ const setup = DB.prepare(`
   )
 `)
 
-setup.run()
-
-const seed = DB.prepare(`
+DB.exec(`
   INSERT INTO books (id, isbn, title, author)
   VALUES (
     'a7512c9e-0338-49b7-8f57-0738c0846f49',
@@ -29,7 +27,5 @@ const seed = DB.prepare(`
     'Eric Evans'
   )
 `)
-
-seed.run()
 
 export default DB
